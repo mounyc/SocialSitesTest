@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -21,6 +22,12 @@ import static junit.framework.Assert.assertEquals;
  */
 public class WebDriverTest {
     private WebDriver driver;
+    private String baseUrl;
+    private boolean acceptNextAlert = true;
+    private StringBuffer verificationErrors = new StringBuffer();
+    /* SauceLab
+    private WebDriver driver;
+    */
 
     @Before
     public void setUp() throws Exception {
@@ -37,8 +44,22 @@ public class WebDriverTest {
     @Test
     public void basic() throws Exception {
         // Make the browser get the page and check its title
-        driver.get("https://www.linkedin.com/");
+        driver.get(baseUrl);
         assertEquals("World's Largest Professional Network | LinkedIn", driver.getTitle());
+        //driver = new FirefoxDriver();
+        baseUrl = "https://www.linkedin.com/";
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    }
+
+    @Test
+    public void loginSuccess() throws Exception {
+        driver.get(baseUrl);
+        driver.findElement(By.id("session_key-login")).clear();
+        driver.findElement(By.id("session_key-login")).sendKeys("ratan512@aol.com");
+        driver.findElement(By.id("session_password-login")).clear();
+        driver.findElement(By.id("session_password-login")).sendKeys("bangladesh");
+        driver.findElement(By.id("signin")).click();
+        assertEquals("People You May Know", driver.findElement(By.linkText("People You May Know")).getText());
     }
 
     @After
