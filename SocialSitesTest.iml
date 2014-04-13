@@ -55,11 +55,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.saucelabs:sauce_java_common:2.0.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.saucelabs:saucerest:1.0.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.saucelabs:sauce_testng:1.0.13" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:6.1.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.beanshell:bsh:2.0b4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.12" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.yaml:snakeyaml:1.6" level="project" />
   </component>
 </module>
 

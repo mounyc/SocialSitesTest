@@ -25,12 +25,7 @@
             <version>[1.0.0,)</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.saucelabs</groupId>
-            <artifactId>sauce_testng</artifactId>
-            <version>1.0.13</version>
-            <scope>test</scope>
-        </dependency>
+
     </dependencies>
 
     <build>
