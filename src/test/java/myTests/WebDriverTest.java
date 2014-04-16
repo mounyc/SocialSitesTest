@@ -55,9 +55,9 @@ public class WebDriverTest {
     public void loginSuccess() throws Exception {
         driver.get(baseUrl);
         driver.findElement(By.id("session_key-login")).clear();
-        driver.findElement(By.id("session_key-login")).sendKeys("ratan512@aol.com");
+        driver.findElement(By.id("session_key-login")).sendKeys("mtest1.mtest1@gmail.com");
         driver.findElement(By.id("session_password-login")).clear();
-        driver.findElement(By.id("session_password-login")).sendKeys("bangladesh");
+        driver.findElement(By.id("session_password-login")).sendKeys("bogra123");
         driver.findElement(By.id("signin")).click();
         assertEquals("People You May Know", driver.findElement(By.linkText("People You May Know")).getText());
     }
