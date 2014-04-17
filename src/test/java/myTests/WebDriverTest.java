@@ -10,10 +10,12 @@ import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -39,6 +41,10 @@ public class WebDriverTest {
         this.driver = new RemoteWebDriver(
                 new URL("http://mtest1:e55c18d3-f3b5-4d1d-9165-0a5f1aa3bcbe@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
+
+       // driver = new FirefoxDriver();
+        baseUrl = "https://www.linkedin.com";
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
     @Test
@@ -46,24 +52,29 @@ public class WebDriverTest {
         // Make the browser get the page and check its title
         driver.get(baseUrl);
         assertEquals("World's Largest Professional Network | LinkedIn", driver.getTitle());
-        //driver = new FirefoxDriver();
-        baseUrl = "https://www.linkedin.com/";
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+
     }
 
     @Test
     public void loginSuccess() throws Exception {
         driver.get(baseUrl);
         driver.findElement(By.id("session_key-login")).clear();
-        driver.findElement(By.id("session_key-login")).sendKeys("ratan512@aol.com");
+        driver.findElement(By.id("session_key-login")).sendKeys("mtest1.mtest1@gmail.com");
         driver.findElement(By.id("session_password-login")).clear();
-        driver.findElement(By.id("session_password-login")).sendKeys("bangladesh");
+        driver.findElement(By.id("session_password-login")).sendKeys("bogra123");
         driver.findElement(By.id("signin")).click();
+        driver.findElement(By.linkText("Home")).click();
+        driver.findElement(By.linkText("Profile")).click();
+        driver.findElement(By.linkText("Network")).click();
+        driver.findElement(By.linkText("Jobs")).click();
         assertEquals("People You May Know", driver.findElement(By.linkText("People You May Know")).getText());
     }
 
+
+
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+       driver.quit();
     }
 }
