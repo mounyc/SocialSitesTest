@@ -34,15 +34,15 @@ public class WebDriverTest {
     @Before
     public void setUp() throws Exception {
         // Choose the browser, version, and platform to test
-        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-        capabilities.setCapability("version", "5");
-        capabilities.setCapability("platform", Platform.XP);
+        //DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        //capabilities.setCapability("version", "5");
+        //capabilities.setCapability("platform", Platform.XP);
         // Create the connection to Sauce Labs to run the tests
-        this.driver = new RemoteWebDriver(
-                new URL("http://mtest1:e55c18d3-f3b5-4d1d-9165-0a5f1aa3bcbe@ondemand.saucelabs.com:80/wd/hub"),
-                capabilities);
+       // this.driver = new RemoteWebDriver(
+             //   new URL("http://mtest1:e55c18d3-f3b5-4d1d-9165-0a5f1aa3bcbe@ondemand.saucelabs.com:80/wd/hub"),
+               // capabilities);
 
-       // driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
         baseUrl = "https://www.linkedin.com";
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

@@ -6,7 +6,12 @@
 
     <groupId>com.mm.SocialSitesTest</groupId>
     <artifactId>SocialSitesTest</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>Facebook</module>
+        <module>LinkedIn</module>
+    </modules>
 
     <dependencies>
         <dependency>
